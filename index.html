@@ -9,7 +9,33 @@
     <script src="app.js" defer></script>
   </head>
   <body>
+    <!-- Overlay -->
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="modal hidden" id="modal">
+      <form id="book-form">
+        <div class="form-control">
+          <label for="title">Book Title</label>
+          <input type="text" name="title" id="book-title" />
+        </div>
+        <div class="form-control">
+          <label for="author">Author</label>
+          <input type="text" name="author" id="book-author" />
+        </div>
+        <div class="form-control">
+          <label for="description">Description</label>
+          <input type="text" name="description" id="book-description" />
+        </div>
+        <div class="form-control">
+          <label for="rating">Book Title</label>
+          <input type="text" name="rating" id="book-rating" />
+        </div>
+        <button type="submit" class="btn">Submit Book</button>
+      </form>
+    </div>
     <h1>Odin Library</h1>
+    <div class="btn-container">
+      <button class="btn" id="add-book">Add Book</button>
+    </div>
     <div class="container">
       <article class="card">
         <header>
