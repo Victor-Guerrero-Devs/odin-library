@@ -3,15 +3,11 @@ const modalEle = document.querySelector('#modal');
 const bookFormEle = document.querySelector('#book-form');
 const bookListEle = document.querySelector('#book-list');
 const addBookBtn = document.querySelector('#add-book');
+const articleBtns = document.querySelectorAll('.article-btn');
 
 let books = [];
 
-function showForm() {
-  overlayEle.classList.toggle('hidden');
-  modalEle.classList.toggle('hidden');
-}
-
-function hideForm() {
+function toggleForm() {
   overlayEle.classList.toggle('hidden');
   modalEle.classList.toggle('hidden');
 }
@@ -33,7 +29,7 @@ function handleForm(e) {
   books.push(book);
   console.log(books);
   bookFormEle.reset();
-  hideForm();
+  toggleForm();
   renderBooks(book);
 }
 
@@ -51,8 +47,8 @@ function renderBooks({ title, author, description, rating }) {
   bookListEle.appendChild(cardEle);
 }
 
-addBookBtn.addEventListener('click', showForm);
+addBookBtn.addEventListener('click', toggleForm);
 
 bookFormEle.addEventListener('submit', handleForm);
 
-overlayEle.addEventListener('click', hideForm);
+overlayEle.addEventListener('click', toggleForm);
