@@ -13,6 +13,18 @@ function hideForm() {
   modalEle.classList.toggle('hidden');
 }
 
+function handleForm(e) {
+  e.preventDefault();
+  const data = new FormData(bookFormEle);
+  const { title, author, description, rating } = Object.fromEntries(
+    data.entries()
+  );
+  console.log(title, author, description, rating);
+  bookFormEle.reset();
+}
+
 addBookEle.addEventListener('click', showForm);
+
+bookFormEle.addEventListener('submit', handleForm);
 
 overlayEle.addEventListener('click', hideForm);
